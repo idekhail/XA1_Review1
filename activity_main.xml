@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Main Activity"
+            android:textColor="#ffffffff"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:background="#ff000000"
+            android:layout_gravity="center"
+            android:gravity="center" 
+          />
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="222.0dp"
+            android:id="@+id/linearLayout2"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="#ff546e7a">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="57.5dp"
+                android:id="@+id/user"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:hint="User"
+                android:padding="15dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="64.0dp"
+                android:id="@+id/code"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:hint="Code"
+                android:padding="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:layout_margin="10dp"
+            android:background="#ff263238"
+            android:gravity="center">
+            <Button
+                android:text="Ok"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ok"
+                android:layout_margin="10dp"
+                android:backgroundTint="#ffffffff"
+                android:textColor="#ff000000"
+                android:padding="15dp"
+                android:textSize="20dp" />
+            <Button
+                android:text="Close"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/close"
+                android:layout_margin="10dp"
+                android:background="#ffffffff"
+                android:backgroundTint="#ffffffff"
+                android:textColor="#ff000000"
+                android:padding="15dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4"
+            android:layout_margin="10dp"
+            android:background="#ff263238"
+            android:gravity="center">
+            <Button
+                android:text="Create Person"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/createperson"
+                android:layout_margin="10dp"
+                android:backgroundTint="#ffffffff"
+                android:textColor="#ff000000"
+                android:padding="5dp"
+                android:textSize="20dp" />
+            <Button
+                android:text="Create Address"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/createaddress"
+                android:layout_margin="10dp"
+                android:background="#ffffffff"
+                android:backgroundTint="#ffffffff"
+                android:textColor="#ff000000"
+                android:padding="5dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
