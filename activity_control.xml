@@ -23,30 +23,73 @@
             android:gravity="center" 
           />
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="222.0dp"
+            android:layout_height="80.0dp"
             android:id="@+id/linearLayout2"
             android:gravity="center"
             android:layout_margin="10dp"
             android:background="#ff546e7a">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50.0dp"
+                android:id="@+id/uid"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:text="UserId"
+                android:padding="15dp" />
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="57.5dp"
+                android:layout_width="100dp"
+                android:layout_height="50.0dp"
                 android:id="@+id/user"
                 android:background="#ffffffff"
                 android:layout_margin="10dp"
                 android:hint="User"
                 android:padding="15dp" />
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="64.0dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
                 android:id="@+id/code"
                 android:background="#ffffffff"
                 android:layout_margin="10dp"
                 android:hint="Code"
+                android:padding="15dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="80.0dp"
+            android:id="@+id/linearLayout6"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="#ff546e7a">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="49.0dp"
+                android:id="@+id/aid"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:text="AddressId"
+                android:padding="15dp" />
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="49.0dp"
+                android:id="@+id/city"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:hint="City"
+                android:padding="15dp" />
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="49dp"
+                android:id="@+id/pcode"
+                android:background="#ffffffff"
+                android:layout_margin="10dp"
+                android:hint="PCode"
                 android:padding="15dp" />
         </LinearLayout>
         <LinearLayout
