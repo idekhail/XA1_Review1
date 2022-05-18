@@ -70,10 +70,12 @@ namespace XA1_Review1
                 }
                 else
                 {
-                    Intent i = new Intent(this, typeof(CreateAddressActivity));
-                    StartActivity(i);
+                    Toast.MakeText(this, "خطاء", ToastLength.Long).Show();
+
+                    //Intent i = new Intent(this, typeof(CreateAddressActivity));
+                    //StartActivity(i);
                 }
-               
+
             };
 
         }

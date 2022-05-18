@@ -22,8 +22,14 @@ namespace XA1_Review1
 
             SetContentView(Resource.Layout.activity_show);
 
-            var user = FindViewById<EditText>(Resource.Id.user);
+            var user = FindViewById<TextView>(Resource.Id.user);
+            var uid = FindViewById<TextView>(Resource.Id.uid);
             var code = FindViewById<TextView>(Resource.Id.code);
+
+            var aid = FindViewById<TextView>(Resource.Id.aid);
+            var city = FindViewById<TextView>(Resource.Id.city);
+            var pcode = FindViewById<TextView>(Resource.Id.pcode);
+
             var showall = FindViewById<TextView>(Resource.Id.showall);
 
 
@@ -39,11 +45,25 @@ namespace XA1_Review1
 
             if(person != null)
             {
-                user.Text = person.User;
+                uid.Text = person.Id.ToString();
+                user.Text = person.User ;
                 code.Text = person.Code;
 
+
+                var address = sq.GetAddressById(person.Id);
+                try
+                {
+                    aid.Text = address.AId.ToString();
+                    city.Text = address.City;
+                    pcode.Text = address.PCode;
+                }catch(Exception ex)
+                {
+                    Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
+
+                }
+
             }
-          
+
 
             control.Click += delegate
             {

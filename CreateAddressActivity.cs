@@ -18,7 +18,7 @@ namespace XA1_Review1
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_create);
+            SetContentView(Resource.Layout.activity_createaddress);
             var city = FindViewById<EditText>(Resource.Id.city);
             var pcode = FindViewById<EditText>(Resource.Id.pcode);
             var pid = FindViewById<EditText>(Resource.Id.pid);
@@ -27,20 +27,24 @@ namespace XA1_Review1
             var cancel = FindViewById<Button>(Resource.Id.cancel);
             var add = FindViewById<Button>(Resource.Id.add);
 
-
-            pid.Text = Intent.GetStringExtra("Id");
+            try
+            {
+                pid.Text = Intent.GetStringExtra("Id");
+            }catch(Exception ex)
+            {
+                Toast.MakeText(this, ex.Message, ToastLength.Long).Show();
+            }
           
 
             add.Click += delegate
             {
-                if (!string.IsNullOrEmpty(city.Text) && string.IsNullOrEmpty(pcode.Text)
-                 && string.IsNullOrEmpty(pid.Text))
+                if (!string.IsNullOrEmpty(city.Text) && !string.IsNullOrEmpty(pcode.Text) && !string.IsNullOrEmpty(pid.Text))
                 {
                     var address = new SQLiteOperations.Address()
                     {
                         City = city.Text,
                         PCode = pcode.Text,
-                        Id = Convert.ToInt16(pid.Text),                       
+                        Id = Convert.ToInt32(pid.Text),                       
                     };
                     var sq = new SQLiteOperations();
                     sq.InsertAddress(address);

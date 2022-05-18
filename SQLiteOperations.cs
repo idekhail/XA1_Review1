@@ -1,5 +1,4 @@
 ﻿using SQLite;
-
 using System.Collections.Generic;
 using System.IO;
 
@@ -9,7 +8,7 @@ namespace XA1_Review1
     {
         //database path
         private readonly string dbPath = Path.Combine(
-                System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "PersonDB.db3");
+                System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "PersonDB1.db3");
         //Constructor     
         public SQLiteOperations()
         {
@@ -23,7 +22,7 @@ namespace XA1_Review1
         }
         //  Insert users intoDB (array of users)
         //  ادخال مستخدم جديد
-        public void InsertPersoon(Person person)
+        public void InsertPerson(Person person)
         {
             var db = new SQLiteConnection(dbPath);
             db.Insert(person);
@@ -92,7 +91,6 @@ namespace XA1_Review1
                 return null;
             }
         }
-
         public Address GetAddressByPersonId(int id)
         {
             var db = new SQLiteConnection(dbPath);
@@ -122,11 +120,11 @@ namespace XA1_Review1
         //    //Console.WriteLine("Reading data From Table");
         //    return db.Table<Person>().Where(i => i.User == user).FirstOrDefault();
         //}
-        //public List<Person> GetUsersByUser(string user)
-        //{
-        //    var db = new SQLiteConnection(dbPath);
-        //    return db.Table<Person>().Where(i => i.User == user).ToList();
-        //}
+        public List<Person> GetPersonByUser(string user)
+        {
+            var db = new SQLiteConnection(dbPath);
+            return db.Table<Person>().Where(i => i.User == user).ToList();
+        }
 
         [Table("Person")]
         public class Person
@@ -140,7 +138,7 @@ namespace XA1_Review1
         [Table("Address")]
         public class Address
         {
-            [PrimaryKey, AutoIncrement, Column("_id")]
+            [PrimaryKey, AutoIncrement, Column("_aid")]
             public int AId { get; set; }
             public string City { get; set; }
             public string PCode { get; set; }
