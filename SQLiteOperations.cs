@@ -114,12 +114,11 @@ namespace XA1_Review1
             var db = new SQLiteConnection(dbPath);
             return db.Table<Address>().ToList();
         }
-        //public Person GetUser(string user)
-        //{
-        //    var db = new SQLiteConnection(dbPath);
-        //    //Console.WriteLine("Reading data From Table");
-        //    return db.Table<Person>().Where(i => i.User == user).FirstOrDefault();
-        //}
+        public Person GetPerson(string user)
+        {
+            var db = new SQLiteConnection(dbPath);
+            return db.Table<Person>().Where(i => i.User == user).FirstOrDefault();
+        }
         public List<Person> GetPersonByUser(string user)
         {
             var db = new SQLiteConnection(dbPath);
