@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -34,7 +34,7 @@
             android:background="#ff546e7a">
             <TextView
                 android:layout_width="100dp"
-                android:layout_height="49.0dp"
+                android:layout_height="50.0dp"
                 android:id="@+id/uid"
                 android:background="#ffffffff"
                 android:layout_margin="10dp"
@@ -42,7 +42,7 @@
                 android:padding="15dp" />
             <EditText
                 android:layout_width="100dp"
-                android:layout_height="49.0dp"
+                android:layout_height="50.0dp"
                 android:id="@+id/user"
                 android:background="#ffffffff"
                 android:layout_margin="10dp"
@@ -50,13 +50,14 @@
                 android:padding="15dp" />
             <TextView
                 android:layout_width="100dp"
-                android:layout_height="49dp"
+                android:layout_height="50dp"
                 android:id="@+id/code"
                 android:background="#ffffffff"
                 android:layout_margin="10dp"
                 android:text="Code"
                 android:padding="15dp" />
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -113,8 +114,8 @@
                 android:padding="15dp"
                 android:textSize="15dp" />
             <Button
-                android:text="All By User"
-                android:layout_width="180dp"
+                android:text="All By Address"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/allperson"
                 android:layout_margin="10dp"
