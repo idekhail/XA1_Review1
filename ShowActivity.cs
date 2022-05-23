@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -91,11 +91,13 @@ namespace XA1_Review1
             allperson.Click += delegate
             {
                 var sq = new SQLiteOperations();
-                var person = sq.GetPersonByUser(user.Text);
+                var area = sq.GetAllPersonByaddress(city.Text, pcode.Text);
                 string s = "";
-                foreach (var p in person)
+                foreach (var p in area)
                 {
-                    s += p.Id + "   " + p.User + "   " + p.Code + "\n";
+                    var pers = sq.GetPersonById(p.Id);
+
+                    s += pers.Id + "   " + pers.User + "   " + pers.Code + "\n";
                 }
                 showall.Text = s;
             };
