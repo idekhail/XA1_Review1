@@ -50,7 +50,7 @@ namespace XA1_Review1
                 code.Text = person.Code;
 
 
-                var address = sq.GetAddressById(person.Id);
+                var address = sq.GetAddressByPersonId(person.Id);
                 try
                 {
                     aid.Text = address.AId.ToString();
