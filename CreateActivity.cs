@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -28,21 +28,26 @@ namespace XA1_Review1
 
             add.Click += delegate
             {
-                if (user.Text != "" && code.Text != "")
+                if (!string.IsNullOrEmpty(user.Text) && !string.IsNullOrEmpty(code.Text))
                 {
-                    var person = new SQLiteOperations.Person()
-                    {
-                        User = user.Text,
-                        Code = code.Text,
-                       
-
-                        //website = "edfh"
-                    };
                     var sq = new SQLiteOperations();
-                    sq.InsertPerson(person);
+                    if (sq.GetPerson(user.Text) == null)
+                    {
+                        var person = new SQLiteOperations.Person()
+                        {
+                            User = user.Text,
+                            Code = code.Text,
+                        };
 
-                    Intent i = new Intent(this, typeof(MainActivity));
-                    StartActivity(i);
+                        sq.InsertPerson(person);
+
+                        Intent i = new Intent(this, typeof(MainActivity));
+                        StartActivity(i);
+                    }
+                    else
+                        Toast.MakeText(this, "الاسم محجوز", ToastLength.Long).Show();
+
+                    
                 }
                 else
                 {
