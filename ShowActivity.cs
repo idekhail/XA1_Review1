@@ -36,7 +36,7 @@ namespace XA1_Review1
             var control = FindViewById<Button>(Resource.Id.control);
             var logout = FindViewById<Button>(Resource.Id.logout);
             var all = FindViewById<Button>(Resource.Id.all);
-            var allperson = FindViewById<Button>(Resource.Id.allperson);
+            var allbyaddress = FindViewById<Button>(Resource.Id.allbyaddress);
 
 
             string id = Intent.GetStringExtra("Id");
@@ -88,7 +88,9 @@ namespace XA1_Review1
                 }
                 showall.Text = s;
             };
-            allperson.Click += delegate
+
+
+            allbyaddress.Click += delegate
             {
                 var sq = new SQLiteOperations();
                 var area = sq.GetAllPersonByaddress(city.Text, pcode.Text);
