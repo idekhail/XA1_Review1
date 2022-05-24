@@ -117,7 +117,7 @@
                 android:text="All By Address"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/allperson"
+                android:id="@+id/allbyaddress"
                 android:layout_margin="10dp"
                 android:background="#ffffffff"
                 android:backgroundTint="#ffffffff"
