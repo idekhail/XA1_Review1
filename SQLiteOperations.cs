@@ -1,4 +1,4 @@
-﻿using SQLite;
+using SQLite;
 using System.Collections.Generic;
 using System.IO;
 
@@ -55,7 +55,14 @@ namespace XA1_Review1
             db.Delete(address);
         }
 
-        // Object ارجاع بيانات مستخدم واحد على شكل   
+        // Object ارجاع بيانات مستخدم واحد على شكل
+        public Person GetPerson(string user)
+        {
+            var db = new SQLiteConnection(dbPath);
+            return db.Table<Person>().Where(i => i.User == user).FirstOrDefault();
+            //if (p != null) return true;
+            //else return false;
+        }
         public Person GetPerson(string user, string code)
         {
             var db = new SQLiteConnection(dbPath);
@@ -113,16 +120,17 @@ namespace XA1_Review1
         {
             var db = new SQLiteConnection(dbPath);
             return db.Table<Address>().ToList();
-        }
-        public Person GetPerson(string user)
-        {
-            var db = new SQLiteConnection(dbPath);
-            return db.Table<Person>().Where(i => i.User == user).FirstOrDefault();
-        }
+        }        
         public List<Person> GetPersonByUser(string user)
         {
             var db = new SQLiteConnection(dbPath);
             return db.Table<Person>().Where(i => i.User == user).ToList();
+        }
+        
+            public List<Address> GetAllPersonByaddress(string city, string pcode)
+        {
+            var db = new SQLiteConnection(dbPath);
+            return db.Table<Address>().Where(i => i.City == city && i.PCode == pcode).ToList();
         }
 
         [Table("Person")]
